@@ -78,7 +78,7 @@ function MainPage() {
     },
     {
       id: 5,
-      title: "CC1-Ract",
+      title: "CC1-React",
       description:
         "Prepare for your React exams with this interactive app that covers key concepts, quizzes, and challenges to test your knowledge and skills.",
       bg: "blue",
