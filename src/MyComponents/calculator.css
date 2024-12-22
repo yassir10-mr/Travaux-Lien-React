@@ -1,0 +1,404 @@
+/* Styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cont-calc {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("/public/math.jpg"); /* Remplacez ceci par le chemin de votre image */
+  background-size: cover; /* L'image couvre toute la surface de l'écran */
+  background-position: center; /* Centrer l'image */
+  background-attachment: fixed; /* L'image reste fixe lors du défilement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+/* Formes animées */
+.shape {
+  position: absolute;
+  animation: moveShapes 10s linear infinite;
+  pointer-events: none; /* Pour ne pas interférer avec les clics */
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.circle {
+  background-color: #ff6a00;
+  width: 100px;
+  height: 100px;
+}
+
+.square {
+  background-color: #ee0979;
+  width: 120px;
+  height: 120px;
+}
+
+/* Animation des formes : mouvement dans l'écran */
+@keyframes moveShapes {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(400px, -200px);
+  }
+  50% {
+    transform: translate(500px, 250px);
+  }
+  75% {
+    transform: translate(-200px, 400px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Styles de la calculatrice */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  z-index: 2; /* Pour que la calculatrice soit au-dessus des formes */
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Styles du switch pour changer le mode */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+/* Styles quand le switch est activé (dark mode) */
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Effet hover pour le switch */
+.slider:hover {
+  background-color: #888;
+}
+
+/* Styles de la sortie (affichage du calcul) */
+.output {
+  width: 100%;
+  padding: 20px;
+  text-align: right;
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.output input {
+  width: 100%;
+  padding: 10px;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  outline: none;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Styles des boutons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #0056b3;
+  transform: translateY(2px);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Styles pour le mode sombre */
+.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark .output {
+  background-color: #333;
+}
+
+.dark .output input {
+  color: #fff;
+}
+
+.dark button {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dark button:active {
+  background-color: #0056b3;
+}
+
+/* Styles pour le mode clair */
+.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.light .output {
+  background-color: #f1f1f1;
+}
+
+.light .output input {
+  color: #333;
+}
+
+.light button {
+  background-color: #fff;
+  color: #333;
+}
+
+.light button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.light button:active {
+  background-color: #0056b3;
+}
+
+/* Styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fond avec une image et des cercles animés */
+
+/* Formes animées */
+.shape {
+  position: absolute;
+  pointer-events: none; /* Pour ne pas interférer avec les clics */
+  opacity: 0.7;
+}
+
+/* Cercle animé */
+.circle {
+  background-color: #ff6a00;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Animation personnalisée pour chaque cercle */
+.circle:nth-child(1) {
+  animation: moveCircle1 10s linear infinite;
+}
+
+.circle:nth-child(2) {
+  animation: moveCircle2 12s linear infinite;
+}
+
+.circle:nth-child(3) {
+  animation: moveCircle3 14s linear infinite;
+}
+
+.circle:nth-child(4) {
+  animation: moveCircle4 16s linear infinite;
+}
+
+/* Définition des animations personnalisées pour chaque cercle avec des directions différentes */
+@keyframes moveCircle1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(500px, 200px); /* Mouvement vers la droite et en bas */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircle2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(
+      -50px,
+      -150px
+    ); /* Mouvement vers la gauche et en haut */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircle3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(
+      900px,
+      -50px
+    ); /* Mouvement vers la droite et en haut */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircle4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(
+      -100px,
+      800px
+    ); /* Mouvement vers la gauche et en bas */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Styles pour le mode sombre et clair (si nécessaire) */
+.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark .output {
+  background-color: #333;
+}
+
+.dark .output input {
+  color: #fff;
+}
+
+.dark button {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dark button:active {
+  background-color: #0056b3;
+}
+
+.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.light .output {
+  background-color: #f1f1f1;
+}
+
+.light .output input {
+  color: #333;
+}
+
+.light button {
+  background-color: #fff;
+  color: #333;
+}
+
+.light button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.light button:active {
+  background-color: #0056b3;
+}

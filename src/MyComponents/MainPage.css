@@ -1,0 +1,113 @@
+/* Background Image */
+.main-bg {
+  background-image: url("../../public/MainBg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+
+  margin-bottom: 30px;
+}
+.Mtitle-gradient {
+  background: linear-gradient(to right, #ecfff0, #17a3b8e8, #007bffc6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.Mcont {
+  background-image: url("/public/main-background.jpg");
+  background-size: cover;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 100%;
+  filter: blur(1);
+}
+.balisCont {
+  margin-bottom: 8rem;
+}
+.balisCont button {
+  text-align: center;
+}
+.Mcont h1 {
+  margin-bottom: 5rem;
+}
+/* ======================================================= */
+.about-section {
+  padding: 20px;
+  background-image: linear-gradient(to right, #4c0085, #4e1d37, #ca728b);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-description {
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* Light and Dark Mode Styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000; /* Couleur par défaut des textes en mode clair */
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #eaeaea; /* Couleur par défaut des textes en mode sombre */
+}
+
+/* Spécifique aux paragraphes */
+.light-mode p {
+  color: #000000; /* Texte des paragraphes en mode clair */
+}
+
+.dark-mode p {
+  color: #eaeaea; /* Texte des paragraphes en mode sombre */
+}
+
+/* Card hover adjustments for dark mode */
+.dark-mode .card-hover {
+  background-color: #000000;
+}
+
+/* Button adjustments for modes */
+.dark-mode .btn {
+  color: #000000;
+  background-color: #eaeaea;
+}
+
+.light-mode .btn {
+  color: #ffffff;
+  background-color: #000000;
+}
