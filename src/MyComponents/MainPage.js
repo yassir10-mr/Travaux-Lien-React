@@ -76,14 +76,6 @@ function MainPage() {
       bg: "info",
       path: "/src/MyComponents/TDLInterface.js",
     },
-    {
-      id: 5,
-      title: "CC1-React",
-      description:
-        "Prepare for your React exams with this interactive app that covers key concepts, quizzes, and challenges to test your knowledge and skills.",
-      bg: "blue",
-      path: "/src/MyComponents/Home.js",
-    },
   ];
 
   return (

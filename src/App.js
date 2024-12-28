@@ -6,10 +6,10 @@ import ProfilApp from "./MyComponents/ProfilApp";
 import FlagApp from "./MyComponents/FlagApp";
 import TDLInterface from "./MyComponents/TDLInterface";
 import Page404 from "./MyComponents/Page404";
-import Formulaire from "./MyComponents/Formulaire";
-import Table from "./MyComponents/Table";
-import Home from "./MyComponents/Home";
-import Filtrer from "./MyComponents/Filtrer";
+// import Formulaire from "./MyComponents/Formulaire";
+// import Table from "./MyComponents/Table";
+// import Home from "./MyComponents/Home";
+// import Filtrer from "./MyComponents/Filtrer";
 
 function App() {
   return (
@@ -32,13 +32,13 @@ function App() {
           element={<TDLInterface />}
         />
 
-        <Route path="/src/MyComponents/Home.js" element={<Home />} />
+        {/* <Route path="/src/MyComponents/Home.js" element={<Home />} />
         <Route path="/src/MyComponents/Filtrer.js" element={<Filtrer />} />
         <Route path="/src/MyComponents/Table.js" element={<Table />} />
         <Route
           path="/src/MyComponents/Formulaire.js"
           element={<Formulaire />}
-        />
+        /> */}
         <Route path="*" element={<Page404 />}></Route>
       </Routes>
     </div>
